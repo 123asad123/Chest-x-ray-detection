@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<div id="whole">
+
+    <body>
+        <h1 class="text-center">Image Classifier</h1>
+        <form class="p-3 text-center" action="/" method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagefile">
+
+            <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+        </form>
+
+
+        {% if filename %}
+                <div class="d-flex justify-content-center">
+                        <img src="{{ url_for('display_image', filename=filename) }}" width="470px" height="500px" style="margin: 20px;">
+
+                    </div>
+            {% endif %}
+
+        {% if Disclaimer %}
+                <p>
+
+            
+            <strong>{{texttwo}}</strong>{{textone}} <strong>{{prediction}}</strong>
+            <br>
+            <br>
+
+            <strong>Symptoms and Categories of Pneumonia on X-Ray</strong>
+            <br>
+            Pneumonia is a type of respiratory infection that can cause inflammation and fluid accumulation in the
+            lungs. The symptoms of pneumonia can vary depending on the type of pneumonia, the age and health of the
+            patient, and other factors. Here are some common symptoms of pneumonia:<br>
+        <ul>
+            <li>Cough (with or without phlegm)</li>
+            <li>Shortness of breath or difficulty breathing</li>
+            <li>Chest pain, particularly when coughing or breathing deeply</li>
+            <li>Fever, chills, and sweating</li>
+            <li>Fatigue or weakness</li>
+            <li>Nausea, vomiting, or diarrhea</li>
+        </ul><br>
+        X-rays are often used to diagnose pneumonia and to monitor its progress. On an X-ray, pneumonia may appear as
+        areas of opacity or consolidation in the lungs. The appearance of pneumonia on an X-ray can help doctors
+        determine the type of pneumonia and the appropriate course of treatment. Here are some categories of pneumonia
+        based on their X-ray appearance:
+        <br>
+        <ul>
+            <li>Bacterial pneumonia: may appear as patchy, lobar, or segmental consolidation in one or both lungs</li>
+            <li>Viral pneumonia: may appear as diffuse, bilateral infiltrates or as focal consolidation</li>
+            <li>Fungal pneumonia: may appear as patchy infiltrates or as nodules with or without cavitation</li>
+            <li>Aspiration pneumonia: may appear as consolidation in the dependent lung or as a diffuse, patchy
+                infiltrate
+            </li>
+            <li>Interstitial pneumonia: may appear as interstitial infiltrates or as ground-glass opacities</li>
+        </ul>
+        <br>
+        It's important to note that X-rays alone are not always sufficient to diagnose pneumonia, and other tests, such
+        as blood tests or sputum cultures, may be necessary. Additionally, the appearance of pneumonia on an X-ray can
+        overlap with other lung conditions, so a doctor's evaluation and clinical judgment are essential for accurate
+        diagnosis and treatment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br>
+        <br>
+        <strong>Disclaimer:</strong><br>
+        <ul>
+            <li>Machine learning models that analyze pneumonia X-rays are intended to provide additional information to
+                healthcare professionals and patients, but should not be used as a substitute for professional medical
+                advice,
+                diagnosis, or treatment.</li>
+            <li>These models have been trained on a large dataset of pneumonia X-rays, but there is still a risk of
+                false
+                positives or false negatives. The accuracy of the model can vary depending on the quality of the input
+                image
+                and
+                the specific characteristics of the patient.</li>
+            <li>It is important to note that pneumonia diagnosis requires a combination of clinical assessment, medical
+                history,
+                physical examination, and laboratory tests, in addition to X-ray images. Therefore, any diagnosis or
+                treatment
+                decisions should be made by a licensed healthcare professional who has access to a wide range of patient
+                information and expertise.</li>
+            <li>In addition, web machine learning models may not be suitable for all populations, as they may have been
+                trained
+                on a specific demographic or may not have been validated on diverse patient populations. Patients should
+                always
+                consult with their healthcare provider before making any medical decisions based on the results of a web
+                machine
+                learning model.</li>
+            <li>In summary, while web machine learning models can provide valuable information about pneumonia X-rays,
+                they
+                should not be used as a substitute for professional medical advice, and any diagnosis or treatment
+                decisions
+                should be made by a licensed healthcare professional.</li>
+        </ul>
+        
+        </p>
+            {% endif %}
+
+
+
+
+
+
+    </body>
+</div>
+
+</html>

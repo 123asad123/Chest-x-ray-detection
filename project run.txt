@@ -1,8 +1,0 @@
-cd E:\FYP\FYP_2024\Deployment
-.\myenv\Scripts\Activate
-pip install -r requirements.txt
-pip install flask
-python app.py
-http://127.0.0.1:3000/
-
-jef.zuckergates@gmail.com
